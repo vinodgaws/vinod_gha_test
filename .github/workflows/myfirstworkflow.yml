@@ -1,10 +1,9 @@
 name: myfirstworkflow
 
 on: 
-    pull_request:
-        branches:
-            - main
-            - feature
+    schedule:
+        - cron: '20 18 * * *'
+          timezone: Asia/Kolkata
 
 jobs:
     myfirstworkflow:
