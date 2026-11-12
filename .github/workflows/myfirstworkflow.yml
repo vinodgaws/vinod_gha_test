@@ -1,1 +1,11 @@
+name: myfirstworkflow
+
+on: push
+
+jobs:
+    myfirstworkflow:
+        runs-on: ubuntu-26.04
+        steps:
+            - name: print my name
+              run: echo "Hello, am Vinod and am learning gha course"
 
