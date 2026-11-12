@@ -1,9 +1,11 @@
 name: myfirstworkflow
 
 on: 
-    schedule:
-        - cron: '38 18 * * *'
-          timezone: Asia/Kolkata
+    push:
+        branches: [main, feature]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
 
 jobs:
     myfirstworkflow:
