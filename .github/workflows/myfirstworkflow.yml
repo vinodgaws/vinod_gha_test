@@ -2,7 +2,7 @@ name: myfirstworkflow
 
 on: 
     schedule:
-        - cron: '20 18 * * *'
+        - cron: '38 18 * * *'
           timezone: Asia/Kolkata
 
 jobs:
