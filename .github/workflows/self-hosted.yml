@@ -1,0 +1,19 @@
+name: Selfhosted Runner
+
+on:
+  push:
+    branches: ["*"]
+
+jobs:
+    node-setup:
+        runs-on: self-hosted
+        steps:
+            - name: checkout the code
+              uses: actions/checkout@v7
+            - name: Run Application
+              run: node index.js
+            - name: run our commands
+              run: |
+                echo "This is running on Selfhosted runner"
+                node --version
+                git --version
