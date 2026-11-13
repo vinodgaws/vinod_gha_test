@@ -1,0 +1,21 @@
+name: OIDC demo
+on: 
+    workflow_dispatch:
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    list_buckets:
+        runs-on: ubuntu-26.04
+        steps:
+            - name: configure aws credentials using OIDC
+              uses: aws-actions/configure-aws-credentials@v6.2.3
+              with:
+                role-to-assume: ${{ secrets.AWS_ARN_ROLE }}
+                aws-region: ${{ secrets.AWS_REGION}}
+            - name: verify whoami
+              run: aws sts get-caller-identity
+            - name: list s3 buckets
+              run: aws s3 ls
+
