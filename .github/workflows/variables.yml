@@ -2,6 +2,9 @@ name: variables examples
 on:
     push:
         branches: ["*"]
+    
+    workflow_dispatch:
+
 env: 
     NAME: Vinod
 jobs: 
