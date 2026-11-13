@@ -7,7 +7,9 @@ env:
 jobs: 
     myfirstjob:
         runs-on: ubuntu-26.04
+        env:
+            GREETING: Hello
         steps:
             - name: print my name
-              run: echo "Am $NAME, Am learning GHA"
+              run: echo "$GREETING, Am $NAME and  Am learning GHA"
             
