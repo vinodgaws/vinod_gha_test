@@ -20,5 +20,5 @@ jobs:
             file: Dockerfile
             push: true
             tags: |
-                ${{ secrets.DOCKERHUB_USER }}/vinod-gha-app:latest
-                ${{ secrets.DOCKERHUB_USER }}/vinod-gha-app:${{ github.run_id }}
+                ${{ secrets.DOCKERHUB_USER }}/vinnu-gha-app:latest
+                ${{ secrets.DOCKERHUB_USER }}/vinnu-gha-app:${{ github.run_id }}
