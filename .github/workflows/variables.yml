@@ -1,0 +1,13 @@
+name: variables examples
+on:
+    push:
+        branches: ["*"]
+env: 
+    NAME: Vinod
+jobs: 
+    myfirstjob:
+        runs-on: ubuntu-26.04
+        steps:
+            - name: print my name
+              run: echo "Am $NAME, Am learning GHA"
+            
