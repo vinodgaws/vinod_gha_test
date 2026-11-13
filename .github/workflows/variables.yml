@@ -11,5 +11,11 @@ jobs:
             GREETING: Hello
         steps:
             - name: print my name
-              run: echo "$GREETING, Am $NAME and  Am learning GHA"
+              env:
+                  course: GHA
+              run: echo "$GREETING, Am $NAME and  Am learning $course.. am working on ${{ vars.PROJECT_NAME}}"
+            - name: print repo name vairable
+              run: echo "My github repo name is ${{ github.repository }}"
+            - name: print triggered by name variables
+              run: echo "my workflow triggered name is ${{ github.actor }}"
             
