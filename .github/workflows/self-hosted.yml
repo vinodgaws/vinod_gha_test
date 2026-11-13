@@ -17,3 +17,5 @@ jobs:
                 echo "This is running on Selfhosted runner"
                 node --version
                 git --version
+            - name: list s3 bucket names
+              run: aws s3 ls 
