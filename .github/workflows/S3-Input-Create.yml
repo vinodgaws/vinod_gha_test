@@ -18,8 +18,8 @@ jobs:
               uses: aws-actions/configure-aws-credentials@v6.2.3
               with:
                 role-to-assume: ${{ secrets.AWS_ARN_ROLE }}
-                aws-region: ${{ secrets.AWS_REGION}}
+                aws-region: ${{ vars.AWS_REGION}}
             - name: create a new bucket as required
               run: |
-                aws s3 mb s3://${{ github.event.inputs.bucket_name }} --region ${{ secrets.AWS_REGION }}
+                aws s3 mb s3://${{ github.event.inputs.bucket_name }} --region ${{ vars.AWS_REGION }}
                 aws s3 ls
