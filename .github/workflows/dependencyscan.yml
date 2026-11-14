@@ -1,7 +1,7 @@
 name: dependency scan with pip-audit
 
 on:
-    push:
+    workflow_call:
 
 jobs: 
     validate:

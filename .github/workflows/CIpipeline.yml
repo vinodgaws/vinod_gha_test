@@ -1,0 +1,9 @@
+name: CI pipeline
+on:
+    workflow_dispatch:
+jobs:
+    dependency-scan:
+        uses: ./.github/workflows/dependencyscan.yml
+    
+    code-quality:
+        uses: ./.github/workflows/codequality.yml
