@@ -1,0 +1,47 @@
+name: mapping and dependency demo
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Select the environment for deployment'
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - uat
+                    - prod
+jobs:
+    code:
+        runs-on: ubuntu-24.04
+        steps:
+            - name: clone the repo
+              run: echo "code clone here"
+    build:
+        needs: [code]
+        runs-on: ubuntu-24.04
+        steps:
+            - name: build the code
+              run: echo "code build here"
+    
+    test:
+        needs: [build]
+        runs-on: ubuntu-24.04
+        steps:
+            - name: test the code
+              run: echo "code test here"
+    
+    deploy-to-dev:
+        needs: [build,test]
+        if: ${{ inputs.environment == 'dev'}}
+        runs-on: ubuntu-24.04
+        steps:
+            - name: deploy to dev
+              run: echo "Deploy to dev"
+    
+    deploy-to-uat:
+        needs: [build,test]
+        if: ${{ inputs.environment == 'uat'}}
+        runs-on: ubuntu-24.04
+        steps:
+            - name: deploy to uat
+              run: echo "Deploy to uat"
