@@ -23,7 +23,7 @@ jobs:
       - name: run trivy scan on our repository
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: '${{ secrets.DOCKERHUB_USER }}/vinnu-gha-app:latest'
+          image-ref: '${{ secrets.DOCKERHUB_USER }}/weatherapp:latest'
           format: 'table'
           exit-code: '0'
           severity: 'CRITICAL,HIGH'
