@@ -45,3 +45,11 @@ jobs:
         steps:
             - name: deploy to uat
               run: echo "Deploy to uat"
+    
+    deploy-to-prod:
+        needs: [build,test]
+        if: ${{ inputs.environment == 'prod'}}
+        runs-on: ubuntu-24.04
+        steps:
+            - name: deploy to prod
+              run: echo "Deploy to prod"
